@@ -124,7 +124,7 @@ body {
 }
 
 .hamburger {
-    position: absolute;
+    position: fixed;
     top: 3em;
     left: 1em;
     transform: translateY(-50%);
@@ -144,7 +144,7 @@ body {
 .nav {
 
     &-mobile {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         bottom: 0;
@@ -197,7 +197,7 @@ body {
     text-decoration: none;
     border: 1px solid $white;
     background-color: transparent;
-    z-index: 1000;
+    z-index: 10;
     border-radius: 50%;
     transition: opacity .3s ease;
     pointer-events: none;

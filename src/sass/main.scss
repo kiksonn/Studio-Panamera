@@ -195,14 +195,16 @@ body {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    transition: opacity .4s;
     border: 1px solid $white;
     background-color: transparent;
     z-index: 1000;
     border-radius: 50%;
+    transition: opacity .3s ease;
+    pointer-events: none;
 }
 
 .top__active {
+    pointer-events: auto;
     opacity: 1;
 }
 

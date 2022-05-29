@@ -1,4 +1,4 @@
-@import 'colors', 'components', 'about', 'offer';
+@import 'colors', 'components', 'about', 'offer', 'team';
 
 *,
 *::before,
@@ -208,76 +208,167 @@ body {
     opacity: 1;
 }
 
+// CONTACT
 
-// BAR
+.contact {
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
 
-// .bar {
-//     width: 100%;
-//     height: 400px;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     background-size: cover;
-//     background-position: center center;
-//     background-image: url('../img/about.jpg');
+    &__details {
+        position: relative;
+        border-radius: 4px;
+        background-color: $dark;
+        color: $grey;
+        padding: 2em;
+        margin-bottom: 2em;
+        overflow: hidden;
 
-//     &__wrapper {
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-//     }
+        a {
+            color: $grey;
+            text-decoration: none;
+        }
 
-//     &__text {
-//         padding: 2.5rem;
-//         width: 100%;
-//         color: white;
-//         border: 2px solid $white;
-//         text-align: center;
-//         font-size: 2.5rem;
+        &__btn {
+            position: relative;
+            background-color: blue;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            height: 50px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-size: 1.4rem;
+            overflow: hidden;
+            z-index: 0;
 
-//         strong {
-//             font-weight: 500;
-//         }
+            &::before {
+                display: block;
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                transform: scaleX(0);
+                transform-origin: right;
+                transition: transform .3s;
+                z-index: -1;
+                background-color: rgb(191, 109, 22);
+            }
 
-//     }
-// }
+            &:hover::before {
+                transform-origin: left;
+                transform: scaleX(1);
+            }
+        }
+    }
 
+    &__details-title {
+        margin-bottom: 2em;
+    }
 
+    &__heading {
+        text-align: center;
+        text-transform: uppercase;
 
+        margin-bottom: 0.5em;
+        letter-spacing: 2px;
+        font-size: 2rem;
+    }
 
+    &__text {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5em;
 
+        img {
+            height: 20px;
+            margin-right: .5em;
+        }
+    }
 
+    &__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 
+    &__input,
+    &__textarea {
+        border: 1px solid $grey;
+        margin-bottom: 2em;
+        border-radius: 4px;
+        border-bottom: 2px solid $grey;
+        background-color: $black;
 
+        &:focus {
+            border-bottom: 2px solid $white;
+            outline: none;
+        }
 
+    }
 
+    &__textarea {
+        resize: vertical;
+    }
 
+    &__input,
+    &__textarea,
+    &__btn {
+        padding: 1em;
+        font-size: 1.6rem;
+    }
 
+    &__btn {
+        position: relative;
+        background-color: $dark;
+        color: $grey;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        height: 50px;
+        text-transform: uppercase;
+        font-weight: bold;
+        // letter-spacing: 2px;
+        font-size: 1.4rem;
+        overflow: hidden;
+        z-index: 0;
 
+        &::before {
+            display: block;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform .3s;
+            z-index: -1;
+            // background-color: $grey;
+        }
 
+        &:hover::before {
+            transform-origin: left;
+            transform: scaleX(1);
+        }
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    &__bg-icon {
+        position: absolute;
+        bottom: -40%;
+        right: -40%;
+        width: 120%;
+        transform: rotate(25deg);
+        pointer-events: none;
+        opacity: .05;
+    }
+}
 
 @media(min-width: 768px) {
     .header {
@@ -291,12 +382,50 @@ body {
             }
         }
     }
+
+    .contact {
+        &__text {
+            font-size: 1.8rem;
+        }
+
+        &__heading {
+            font-size: 2.6rem;
+        }
+
+        &__bg-icon {
+            bottom: -50%;
+            right: -10%;
+            width: 70%;
+        }
+    }
+
+    .offer {
+
+        &__option {
+            &-img {
+                height: auto;
+                object-fit: cover;
+            }
+        }
+    }
 }
 
 @media(min-width: 992px) {
     .header {
         .company-name {
             font-size: 4.9rem;
+        }
+    }
+
+    .contact {
+        &__heading {
+            font-size: 3rem;
+        }
+
+        &__bg-icon {
+            bottom: -50%;
+            right: -10%;
+            width: 50%;
         }
     }
 }
@@ -336,6 +465,30 @@ body {
     .gallery {
         grid-template-columns: repeat(8, 1fr);
 
+    }
+
+    .contact {
+        &__container {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+        }
+
+        &__details {
+            width: 35%;
+            margin-bottom: 0;
+        }
+
+        &__form {
+            margin-left: 2em;
+            width: 65%;
+        }
+
+        &__bg-icon {
+            bottom: -25%;
+            right: -30%;
+            width: 110%;
+        }
     }
 
 }

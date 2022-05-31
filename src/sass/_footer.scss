@@ -3,11 +3,6 @@
     background-color: $dark;
 
 
-
-    p {
-        color: $white;
-    }
-
     &__heading {
         grid-column: 2/3;
         grid-row: 1/2;
@@ -15,7 +10,7 @@
         font-weight: 400;
         margin-bottom: 1.5rem;
         font-family: 'Sigmar One', cursive;
-        color: $red;
+        color: $white;
         // img {
         //     height: 40px;
         //     margin-right: 5px;
@@ -36,17 +31,18 @@
 
     &__box-text {
         margin-bottom: 1.5rem;
-        color: $white;
-        font-size: 2.2rem;
+        color: $grey;
+        font-size: 2rem;
         font-weight: 700;
     }
 
     &__box-list-item {
-        color: $white;
+        color: $grey;
         margin-bottom: 1.5rem;
+        font-size: 1.8rem;
 
         a {
-            color: $white;
+            color: $grey;
             text-decoration: none;
         }
     }
@@ -63,7 +59,7 @@
     &__end-text {
         text-align: center;
         padding: 2rem;
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 }
 

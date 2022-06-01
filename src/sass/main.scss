@@ -193,11 +193,8 @@ body {
 
     &__box {
         position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        // justify-content: space-evenly;
-
+        display: grid;
+        grid-template-columns: 1, 1fr;
 
         &::before {
             position: absolute;
@@ -215,6 +212,7 @@ body {
         height: 175px;
         width: 175px;
         margin: 2em;
+        justify-self: center;
 
         &-name {
             text-transform: uppercase;
@@ -447,6 +445,12 @@ body {
     .booksy-btn {
         width: 200px;
         padding: 1em;
+    }
+
+    .team {
+        &__box {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 }
 

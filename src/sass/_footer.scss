@@ -10,7 +10,7 @@
         font-weight: 400;
         margin-bottom: 1.5rem;
         font-family: 'Sigmar One', cursive;
-        color: $white;
+        color: $darker-white;
         // img {
         //     height: 40px;
         //     margin-right: 5px;
@@ -52,7 +52,7 @@
     }
 
     &__end {
-        border-top: 1px solid $darker-white;
+        border-top: 1px solid $grey;
         margin-bottom: 2em;
     }
 

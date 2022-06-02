@@ -3,6 +3,8 @@ const navBtn = document.querySelector('.hamburger')
 const allNavItems = document.querySelectorAll('.nav__link')
 const toTop = document.querySelector('.top');
 const bottomBtn = document.querySelector('.booksy-btn');
+const persons = document.querySelectorAll('.team__person-img')
+const teamInfo = document.querySelectorAll('.team__info')
 const footerYear = document.querySelector('.footer__year')
 
 window.addEventListener("scroll", () => {
@@ -27,7 +29,12 @@ const handleNav = () => {
     }) 
 }
 
-navBtn.addEventListener('click', handleNav)
+const teamPerson = () => {
+  // console.log('hej');
+  persons.forEach(person => {
+    teamInfo.classList.add('.active')
+  })
+}
 
 const handleCurrentYear = () => {
   const year = (new Date).getFullYear();
@@ -35,3 +42,4 @@ const handleCurrentYear = () => {
 }
 
 handleCurrentYear();
+navBtn.addEventListener('click', handleNav)

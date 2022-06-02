@@ -1,4 +1,4 @@
-@import 'colors', 'components', 'about', 'offer', 'team', 'footer';
+@import 'colors', 'components', 'about', 'offer', 'gallery', 'footer';
 
 *,
 *::before,
@@ -447,9 +447,33 @@ body {
         padding: 1em;
     }
 
+
+
     .team {
+        &__info {
+            display: none;
+        }
+
         &__box {
             grid-template-columns: repeat(2, 1fr);
+        }
+
+        &__box {
+            &::before {
+                height: 50%;
+            }
+        }
+
+        &__person {
+            height: 200px;
+            width: 200px;
+            margin: 3em;
+            justify-self: self-end;
+
+            &-two,
+            &-four {
+                justify-self: self-start;
+            }
         }
     }
 }

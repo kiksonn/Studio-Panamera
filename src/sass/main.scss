@@ -442,6 +442,19 @@ body {
 
         }
     }
+
+    &__text {
+        font-size: 1.8rem;
+    }
+
+    // &__link {
+    //     color: $grey;
+    //     font-size: 1.8rem;
+
+    //     img {
+    //         margin-left: 1em;
+    //     }
+    // }
 }
 
 @media(min-width: 768px) {
@@ -514,6 +527,12 @@ body {
             &-four {
                 justify-self: self-start;
             }
+        }
+    }
+
+    .person {
+        &__text {
+            font-size: 2rem;
         }
     }
 }

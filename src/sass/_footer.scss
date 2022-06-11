@@ -44,6 +44,11 @@
         a {
             color: $grey;
             text-decoration: none;
+            transition: color .3s ease;
+
+            &:hover {
+                color: $white;
+            }
         }
     }
 

@@ -145,9 +145,6 @@ body {
     }
 }
 
-
-
-
 .nav {
 
     &-mobile {
@@ -184,6 +181,7 @@ body {
         color: $white;
         text-transform: uppercase;
         text-decoration: none;
+        transition: color .3s ease;
 
         &:hover {
             color: $red;
@@ -221,6 +219,11 @@ body {
         width: 175px;
         margin: 2em;
         justify-self: center;
+        transition: .3s ease;
+
+        &:hover {
+            filter: brightness(60%);
+        }
 
         &-name {
             text-transform: uppercase;
@@ -234,6 +237,8 @@ body {
             width: 100%;
             height: 100%;
             object-fit: cover;
+
+
         }
     }
 
@@ -256,6 +261,11 @@ body {
     border-radius: 50%;
     transition: opacity .3s ease;
     pointer-events: none;
+    transition: transform .3s ease;
+
+    &:hover {
+        transform: scale(1.05);
+    }
 }
 
 .booksy-btn {
@@ -275,11 +285,17 @@ body {
     opacity: 0;
     transition: opacity .3s ease;
     font-size: 1.8rem;
-
+    // transition: background-color .3s ease;
 
     img {
         margin-left: .5em;
         width: 22px;
+    }
+
+    transition: transform .3s ease;
+
+    &:hover {
+        transform: scale(1.05);
     }
 }
 

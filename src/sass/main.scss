@@ -1,4 +1,4 @@
-@import 'colors', 'components', 'about', 'offer', 'gallery', 'footer';
+@import 'colors', 'components', 'gallery', 'footer';
 
 *,
 *::before,
@@ -15,17 +15,12 @@ html {
 }
 
 body {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
     background-color: $black;
     color: $grey;
 }
-
-// .hundred {
-//     min-height: 100vh;
-//     max-height: 100vh;
-// }
 
 ::selection {
     background-color: $red;
@@ -84,10 +79,7 @@ body {
     }
 
     &__btn {
-
-
         color: $white;
-
         display: flex;
         align-items: center;
         width: 220px;
@@ -189,12 +181,117 @@ body {
     }
 }
 
+.about {
+    position: relative;
+    top: -3vh;
+    background-color: #1a1a1a;
+    height: auto;
+    z-index: 10;
+    padding: 2em;
+    border-bottom: 4px solid $red;
+
+    &__table {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    &__column {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-bottom: 1px solid $grey;
+        padding: 2em 0;
+
+        img {
+            width: 30px;
+        }
+
+        &:last-child {
+            border: none;
+        }
+
+    }
+
+    &__heading {
+        color: $white;
+        font-size: 2rem;
+        margin: .5em 0 1em 0;
+        text-align: center;
+    }
+
+    &__text {
+        text-align: center;
+        color: $grey;
+        font-size: 1.8rem;
+    }
+
+}
+
+
+.offer {
+    display: flex;
+    flex-direction: column;
+    margin: 5em 0;
+
+    &__info {
+        text-align: center;
+        font-size: 1.8rem;
+    }
+
+    li {
+        font-size: 1.8rem;
+        list-style-type: none;
+    }
+
+    &__container {
+        margin: 3em auto;
+    }
+
+    ol {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    ol li {
+        margin: 1em 0;
+    }
+
+    ul li {
+        margin: 0.5em 1.2em;
+        list-style-type: disc;
+    }
+
+    &__left {
+        padding: 2em;
+    }
+
+    &__right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+        background-size: cover;
+        background-position: center center;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-image: url('../img/bg-sm.jpg');
+    }
+
+    &__img {
+        width: 80%;
+    }
+
+}
+
 // TEAM
 
 .team {
     height: auto;
     padding-bottom: 2em;
-
 
     &__box {
         position: relative;
@@ -285,7 +382,6 @@ body {
     opacity: 0;
     transition: opacity .3s ease;
     font-size: 1.8rem;
-    // transition: background-color .3s ease;
 
     img {
         margin-left: .5em;
@@ -423,10 +519,7 @@ body {
     }
 }
 
-
-
 // PERSON
-
 
 .person {
 
@@ -462,15 +555,6 @@ body {
     &__text {
         font-size: 1.8rem;
     }
-
-    // &__link {
-    //     color: $grey;
-    //     font-size: 1.8rem;
-
-    //     img {
-    //         margin-left: 1em;
-    //     }
-    // }
 }
 
 @media(min-width: 768px) {
@@ -483,6 +567,31 @@ body {
             p {
                 font-size: 2.2rem;
             }
+        }
+    }
+
+    .about {
+        padding: 2em 0;
+
+        &__column {
+            width: 50%;
+            padding: 2em;
+
+            &:nth-child(3) {
+                border: none;
+            }
+
+            img {
+                width: 35px;
+            }
+        }
+
+        &__heading {
+            font-size: 2.3rem;
+        }
+
+        &__text {
+            font-size: 2rem;
         }
     }
 
@@ -503,6 +612,13 @@ body {
     }
 
     .offer {
+        &__info {
+            font-size: 2rem;
+        }
+
+        li {
+            font-size: 2rem;
+        }
 
         &__option {
             &-img {
@@ -557,6 +673,26 @@ body {
     .header {
         .company-name {
             font-size: 4.9rem;
+        }
+    }
+
+    .offer {
+        flex-direction: row;
+        height: auto;
+
+        &__left {
+            flex: 2;
+            height: 100%;
+        }
+
+        &__container {
+            width: 80%;
+        }
+
+        &__right {
+            flex: 1;
+            height: auto;
+            background-image: url('../img/bg-big.jpg');
         }
     }
 
@@ -622,10 +758,23 @@ body {
         display: none;
     }
 
-    // .gallery {
-    //     grid-template-columns: repeat(8, 1fr);
+    .about {
+        &__table {
+            flex-wrap: nowrap;
+        }
 
-    // }
+        &__column {
+            width: 100%;
+            border-right: 1px solid $grey;
+            border-bottom: none;
+
+            &:nth-child(3) {
+                border-right: 1px solid $grey;
+            }
+        }
+    }
+
+
 
     .contact {
         &__container {
